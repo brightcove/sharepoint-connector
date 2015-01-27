@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Content\" Type="ElementManifest" />
+    <ProjectItemFile Source="App.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="bootstrap.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="bootstrap.min.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="Site.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-bg_diagonals-thick_18_b81900_40x40.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-bg_diagonals-thick_20_666666_40x40.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-bg_flat_10_000000_40x100.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-bg_glass_100_f6f6f6_1x400.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-bg_glass_100_fdf5ce_1x400.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-bg_glass_65_ffffff_1x400.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-bg_gloss-wave_35_f6a828_500x100.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-bg_highlight-soft_100_eeeeee_1x100.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-bg_highlight-soft_75_ffe45c_1x100.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-icons_222222_256x240.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-icons_228ef1_256x240.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-icons_ef8c08_256x240.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-icons_ffd27a_256x240.png" Target="Content\jquery-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-ui\ui-icons_ffffff_256x240.png" Target="Content\jquery-ui\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

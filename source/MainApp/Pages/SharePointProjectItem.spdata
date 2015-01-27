@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Pages\" Type="ElementManifest" />
+    <ProjectItemFile Source="Default.aspx" Target="Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="AccountManagement.aspx" Target="Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="ManageVideos.aspx" Target="Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="ManagePlaylists.aspx" Target="Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="AddVideos.aspx" Target="Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="BrightCoveApp.master" Target="Pages\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

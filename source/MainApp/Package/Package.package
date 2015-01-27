@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="aa1cea8f-c814-45b4-885f-b07223a045d5" solutionId="aa1cea8f-c814-45b4-885f-b07223a045d5" resetWebServer="false" sharePointProductVersion="16.0" name="BrightcoveConnectorApp" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="33ca608d-be7e-49d8-bc1b-26f409ca90f7" />
+  </features>
+</package>
