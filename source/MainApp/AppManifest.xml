@@ -3,7 +3,7 @@
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
      Name="BrightcoveConnector"
      ProductID="{18c46cda-8baf-48e5-9ba3-28ecd7ccf3c7}"
-     Version="1.1.2.0"
+     Version="1.1.2.7"
      SharePointMinVersion="15.0.0.0"
 >
   <Properties>

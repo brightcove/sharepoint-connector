@@ -17,7 +17,7 @@ namespace BrightcoveVideoCloudIntegration
         private static List<VideoFields> videoWriteFields = null;
         private static List<VideoFields> videoSearchFields = null;
         private static List<string> playlistBrowseFields = null;
-        private const string accountListAddress = "Lists/Account/AllItems.aspx";
+        private const string accountListAddress = "Lists/Accounts/AllItems.aspx";
         public const string PagingKey = "p";
         public const string Brightcove_AdministratorsGroup = "Brightcove Administrators";
 
@@ -341,7 +341,7 @@ namespace BrightcoveVideoCloudIntegration
             using (SPSite site = new SPSite(SPContext.Current.Web.Url))
             {
                 SPWeb web = site.OpenWeb();
-                SPList list = web.GetList(accountListAddress);
+                SPList list = web.GetList(SPContext.Current.Site.Url + "/" + accountListAddress);
                 SPListItemCollection listItem = list.Items;
 
                 SPSecurity.RunWithElevatedPrivileges(delegate()
@@ -349,7 +349,7 @@ namespace BrightcoveVideoCloudIntegration
                     foreach (SPListItem item in listItem)
                     {
                         //if  user belongs to viewer or authors group load configuration
-                        if (!string.IsNullOrEmpty(item["AccountViewersGroupName"].ToString()) && !string.IsNullOrEmpty(item["AccountAuthorsGroupName"].ToString()))
+                        if ((item["AccountViewersGroupName"] != null && !string.IsNullOrEmpty(item["AccountViewersGroupName"].ToString())) && (item["AccountAuthorsGroupName"] != null && !string.IsNullOrEmpty(item["AccountAuthorsGroupName"].ToString())))
                         {
                             try
                             {
@@ -358,9 +358,9 @@ namespace BrightcoveVideoCloudIntegration
                                 bool isWrite = !string.IsNullOrEmpty(getReadToken(item["Tokens"].ToString(), "Write-"));
                                 if ((belongstoGroup(web, item["AccountViewersGroupName"].ToString()) || belongstoGroup(web, item["AccountAuthorsGroupName"].ToString())) && (isRead & isWrite))
                                 {
-                                    if (!string.IsNullOrEmpty(item["Account Name"].ToString()))
+                                    if (!string.IsNullOrEmpty(item["Title"].ToString()))
                                     {
-                                        accountsBC.Add(item["Account Name"].ToString());
+                                        accountsBC.Add(item["Title"].ToString());
                                     }
                                    
                                 }

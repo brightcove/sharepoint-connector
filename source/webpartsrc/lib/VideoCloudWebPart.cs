@@ -48,7 +48,7 @@ namespace BrightcoveVideoCloudIntegration
         /// <summary>
         /// Sharepoint list
         /// </summary>
-        private string accountListAddress = "Lists/Account/AllItems.aspx";
+        private string accountListAddress = "Lists/Accounts/AllItems.aspx";
 
 
         protected IVideoCloudConfig configProvider = null;
@@ -160,8 +160,8 @@ namespace BrightcoveVideoCloudIntegration
 
             using (SPSite site = new SPSite(SPContext.Current.Web.Url))
             {
-                SPWeb web = site.OpenWeb();                      
-                SPList list = web.GetList(accountListAddress);                
+                SPWeb web = site.OpenWeb();
+                SPList list = web.GetList(SPContext.Current.Site.Url + "/" + accountListAddress);
                 SPListItemCollection listItem = list.Items;
                 
                 SPSecurity.RunWithElevatedPrivileges(delegate()
@@ -169,45 +169,45 @@ namespace BrightcoveVideoCloudIntegration
                 foreach (SPListItem item in listItem)
                 {
                     //if  user belongs to viewer or authors group load configuration
-                    if (!string.IsNullOrEmpty(item["Account Name"].ToString()))
+                    if (!string.IsNullOrEmpty(item["Title"].ToString()))
                     {
-                        if (string.IsNullOrEmpty(accountSelected) || accountSelected == item["Account Name"].ToString())
+                        if (string.IsNullOrEmpty(accountSelected) || accountSelected == item["Title"].ToString())
                         {
                             
                             //if  user belongs to viewer or authors group load configuration
-                            if (!string.IsNullOrEmpty(item["AccountViewersGroupName"].ToString()) && !string.IsNullOrEmpty(item["AccountAuthorsGroupName"].ToString()))
+                            if ((item["AccountViewersGroupName"] != null && !string.IsNullOrEmpty(item["AccountViewersGroupName"].ToString())) && (item["AccountAuthorsGroupName"] != null && !string.IsNullOrEmpty(item["AccountAuthorsGroupName"].ToString())))
                             {
                                 try
                                 {
                                     // if (web.Groups[item["AccountViewersGroupName"].ToString()].ContainsCurrentUser)
                                     if (belongstoGroup(web, item["AccountViewersGroupName"].ToString()) || belongstoGroup(web, item["AccountAuthorsGroupName"].ToString()))
                                     {
-                                        if (!string.IsNullOrEmpty(item["PublisherId"].ToString()))
+                                        if (item["PublisherId"] != null && !string.IsNullOrEmpty(item["PublisherId"].ToString()))
                                         {
                                             this.PublisherId = item["PublisherId"].ToString();
                                         }
 
-                                        if (!string.IsNullOrEmpty(item["DefaultVideoPlayerId"].ToString()))
+                                        if (item["DefaultVideoPlayerId"] != null && !string.IsNullOrEmpty(item["DefaultVideoPlayerId"].ToString()))
                                         {
                                             this.DefaultVideoPlayerId = item["DefaultVideoPlayerId"].ToString();
                                         }
 
-                                        if (!string.IsNullOrEmpty(item["DefaultPlaylistPlayerId"].ToString()))
+                                        if (item["DefaultPlaylistPlayerId"] != null && !string.IsNullOrEmpty(item["DefaultPlaylistPlayerId"].ToString()))
                                         {
                                             this.DefaultPlaylistPlayerId = item["DefaultPlaylistPlayerId"].ToString();
                                         }
 
-                                        if (!string.IsNullOrEmpty(item["ReadAPIServiceURL"].ToString()))
+                                        if (item["ReadAPIServiceURL"] != null && !string.IsNullOrEmpty(item["ReadAPIServiceURL"].ToString()))
                                         {
                                             this._readUrl = item["ReadAPIServiceURL"].ToString();
                                         }
 
-                                        if (!string.IsNullOrEmpty(item["WriteAPIServiceURL"].ToString()))
+                                        if (item["WriteAPIServiceURL"] != null && !string.IsNullOrEmpty(item["WriteAPIServiceURL"].ToString()))
                                         {
                                             this._writeUrl = item["WriteAPIServiceURL"].ToString();
                                         }
 
-                                        if (!string.IsNullOrEmpty(item["Tokens"].ToString()))
+                                        if (item["Tokens"] != null && !string.IsNullOrEmpty(item["Tokens"].ToString()))
                                         {
                                             this.ReadToken = getReadToken(item["Tokens"].ToString(), "Read-");
                                             this.WriteToken = getReadToken(item["Tokens"].ToString(), "Write-");
@@ -247,9 +247,14 @@ namespace BrightcoveVideoCloudIntegration
 
             //Override Method to get configuration from Account List and based user group. SP2013
             GetConfigurationfromList();
-            
+
+            if (Page.Request.QueryString[VideoCloudWebPart.QueryStringKeyAsyncQueryText] != null)
+            {
+                this._isAsyncCall = true;
+            }
+
             // Handle AJAX call to get a video list
-            if (!this._isAsyncCall)
+            if (this._isAsyncCall)
             {
                 this._isAsyncCall = AsyncVideoList();
 
@@ -265,9 +270,21 @@ namespace BrightcoveVideoCloudIntegration
         // For AJAX calls to get video list across web parts
         public bool AsyncVideoList()
         {
-            string query = Page.Request.QueryString[VideoCloudWebPart.QueryStringKeyAsyncQueryText];
-            string order = Page.Request.QueryString[VideoCloudWebPart.QueryStringKeyAsyncOrder];
-            string sort = Page.Request.QueryString[VideoCloudWebPart.QueryStringKeyAsyncSort];
+            string query = "";
+            if (Page.Request.QueryString[VideoCloudWebPart.QueryStringKeyAsyncQueryText] != null)
+            {
+                query = Page.Request.QueryString[VideoCloudWebPart.QueryStringKeyAsyncQueryText];
+            }
+            string order = "";
+            if (Page.Request.QueryString[VideoCloudWebPart.QueryStringKeyAsyncOrder] != null)
+            {
+                order = Page.Request.QueryString[VideoCloudWebPart.QueryStringKeyAsyncOrder];
+            }
+            string sort = "";
+            if (Page.Request.QueryString[VideoCloudWebPart.QueryStringKeyAsyncSort] != null)
+            {
+                sort = Page.Request.QueryString[VideoCloudWebPart.QueryStringKeyAsyncSort];
+            }
             if (query != null)
             {
                 VideoCloudWebPartUserControl videoCloud = new VideoCloudWebPartUserControl();

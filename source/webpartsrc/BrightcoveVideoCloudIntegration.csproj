@@ -184,7 +184,9 @@
     <Content Include="BrightcoveVideoCloudEditor\Elements.xml" />
     <Content Include="BrightcoveVideoCloudEditor\VideoEditorUserControl.ascx" />
     <Content Include="BrightcoveVideoCloudPicklist\Elements.xml" />
-    <Content Include="BrightcoveVideoCloudPlayer\Elements.xml" />
+    <Content Include="BrightcoveVideoCloudPlayer\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="BrightcoveVideoCloudPlayer\VideoPicklistUserControl.ascx" />
     <Content Include="BrightcoveVideoCloudPlayer\VideoPlayerUserControl.ascx">
       <SubType>ASPXCodeBehind</SubType>

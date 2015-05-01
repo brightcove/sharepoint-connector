@@ -22,6 +22,7 @@
 
     $(window).unload(ChooserDone);
     $(document).ready(function () {
+        
         picklistChooserType = '<%= Request.QueryString[BrightcoveVideoCloudIntegration.VideoCloudWebPart.QueryStringKeyAsyncChooserText] %>';
 
         if (picklistChooserType != '') {
@@ -36,7 +37,7 @@
                 $(".available .sectionHeader").html("Available Playlists");
             }
         }
-
+        
         $.ajax({
             url: AddQueryStringParam(window.location.href, queryStringKeyAsyncQueryText + "="),
             success: FillAvailablePicklist
@@ -62,7 +63,7 @@
                 searchText = '';
             }                                                         
 
-
+            
             $.ajax({
                 url: AddQueryStringParam(window.location.toString(), queryStringKeyAsyncSort + '=' + sort + "&" + queryStringKeyAsyncOrder + '=' + order + '&' + queryStringKeyAsyncQueryText + '=' + searchText),
                 success: FillAvailablePicklist
@@ -312,6 +313,7 @@
             if (elemInput.value == '') {
                 elemInput.value = 'search video';
                 $(elemInput).addClass('searchBox_default_text');
+                
                 $.ajax({
                     url: AddQueryStringParam(window.location.toString(), queryStringKeyAsyncQueryText + '=&' + queryStringKeyAsyncSort + '=' + sort + '&' + queryStringKeyAsyncOrder + '=' + order),
                     success: FillAvailablePicklist
@@ -323,6 +325,7 @@
                 }
 
                 $(elemInput).removeClass('searchBox_default_text');
+                
                 $.ajax({
                     url: AddQueryStringParam(window.location.toString(), queryStringKeyAsyncQueryText + '=' + elemInput.value + '&' + queryStringKeyAsyncSort + '=' + sort + '&' + queryStringKeyAsyncOrder + '=' + order),
                     success: FillAvailablePicklist

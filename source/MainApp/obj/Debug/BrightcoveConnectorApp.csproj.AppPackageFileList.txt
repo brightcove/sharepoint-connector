@@ -1,0 +1,1 @@
+C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\MainApp\bin\Debug\app.publish\1.1.2.7\BrightcoveConnectorApp.app

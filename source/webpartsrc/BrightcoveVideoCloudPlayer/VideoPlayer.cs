@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Web.UI;
 using System.Web.UI.WebControls.WebParts;
 using Microsoft.SharePoint.WebPartPages;
@@ -12,7 +13,6 @@ namespace BrightcoveVideoCloudIntegration.VideoPlayer
         public const string VideoChooser = "/_layouts/BrightcoveVideoCloudIntegration/Chooser.aspx?async_chooser=VideoId&IsDlg=1";
         public const string PlaylistChooser = "/_layouts/BrightcoveVideoCloudIntegration/Chooser.aspx?async_chooser=PlaylistId&IsDlg=1";
         //public const string VideoPlayerChooser = "/_layouts/BrightcoveVideoCloudIntegration/ChooserPlayer.aspx?async_chooser=VideoPlayerID&IsDlg=1";
-        
 
         private string backgroundColor = "#FFFFFF";
         [WebBrowsable(true),
@@ -122,9 +122,17 @@ namespace BrightcoveVideoCloudIntegration.VideoPlayer
 
         //protected override string GetCustomBuilder(string propertyName)
         //{
-        //    if (propertyName == "VideoId")
+        //    if (propertyName.Equals("VideoId", StringComparison.InvariantCultureIgnoreCase))
         //    {
-        //        return "VideoChooser.aspx";
+        //        string url = SPContext.Current.Web.Url + VideoChooser;
+
+        //        return url;
+        //    }
+        //    else if (propertyName.Equals("PlaylistId", StringComparison.InvariantCultureIgnoreCase))
+        //    {
+        //        string url = SPContext.Current.Web.Url + PlaylistChooser;
+
+        //        return url;
         //    }
         //    return base.GetCustomBuilder(propertyName);
         //}

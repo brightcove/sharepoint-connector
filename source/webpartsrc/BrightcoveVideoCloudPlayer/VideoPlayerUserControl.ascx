@@ -19,9 +19,29 @@
 
     function InitVideoPlayer0()
     {
+        window.setTimeout(ResetPaths, 2000);
+        
         InitVideoPlayer(['<%= this.message.ClientID %>', '<%= this.PlayerId %>', '<%= this.VideoId %>', 
             '<%= this.PlaylistId %>', '<%= this.PlaylistId %>', '<%= this.PlaylistId %>', '<%= this.BackgroundColor %>', 
             '<%= this.PlayerWidth %>', '<%= this.PlayerHeight %>', '<%= this.AutoStart.ToString().ToLower() %>']);
+    }
+
+    function ResetPaths() {
+        var siteCollUrl = _spPageContextInfo.siteServerRelativeUrl;
+        if (SP.Ribbon != null &&
+            SP.Ribbon.PageState != null &&
+            SP.Ribbon.PageState.Handlers != null &&
+            SP.Ribbon.PageState.Handlers.isInEditMode() &&
+            siteCollUrl != '/') {
+
+            var videoIdOnClick = $("div.UserControlGroup input[id*='VideoId_BUILDER']").attr('onclick');
+            videoIdOnClick = videoIdOnClick.replace("MSOPGrid_doBuilder('", "MSOPGrid_doBuilder('" + _spPageContextInfo.siteServerRelativeUrl);
+            $("div.UserControlGroup input[id*='VideoId_BUILDER']").attr('onclick', videoIdOnClick);
+
+            var playlistOnClick = $("div.UserControlGroup input[id*='PlaylistId_BUILDER']").attr('onclick');
+            playlistOnClick = playlistOnClick.replace("MSOPGrid_doBuilder('", "MSOPGrid_doBuilder('" + _spPageContextInfo.siteServerRelativeUrl);
+            $("div.UserControlGroup input[id*='PlaylistId_BUILDER']").attr('onclick', playlistOnClick);
+        }
     }
 
     function InitVideoPlayer(args) {

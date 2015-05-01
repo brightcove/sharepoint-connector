@@ -1,0 +1,5 @@
+C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\lib\BrightcoveSDK.dll
+C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\lib\BrightcoveSDK.pdb
+C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\SDK\BrightcoveSDK\obj\Debug\BrightcoveSDK.csprojResolveAssemblyReference.cache
+C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\SDK\BrightcoveSDK\obj\Debug\BrightcoveSDK.dll
+C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\SDK\BrightcoveSDK\obj\Debug\BrightcoveSDK.pdb

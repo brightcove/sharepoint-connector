@@ -9,9 +9,9 @@ using System.Security;
 [assembly: AssemblyTitle("BrightcoveVideoCloudIntegration")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Wunderman")]
+[assembly: AssemblyCompany("Brightcove")]
 [assembly: AssemblyProduct("BrightcoveVideoCloudIntegration")]
-[assembly: AssemblyCopyright("Copyright © Wunderman 2011")]
+[assembly: AssemblyCopyright("Copyright © Brightcove 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -34,4 +34,4 @@ using System.Security;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.1.2.7")]
