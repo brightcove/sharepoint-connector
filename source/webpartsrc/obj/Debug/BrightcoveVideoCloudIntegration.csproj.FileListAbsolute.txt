@@ -1,7 +1,0 @@
-C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\bin\Debug\BrightcoveVideoCloudIntegration.dll
-C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\bin\Debug\BrightcoveVideoCloudIntegration.pdb
-C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\obj\Debug\BrightcoveVideoCloudIntegration.csprojResolveAssemblyReference.cache
-C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\obj\Debug\BrightcoveVideoCloudIntegration.dll
-C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\obj\Debug\BrightcoveVideoCloudIntegration.pdb
-C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\bin\Debug\BrightcoveSDK.dll
-C:\src\skearney\Brightcove\SharePointIntegration\releases\1\dev\webpartsrc\bin\Debug\BrightcoveSDK.pdb

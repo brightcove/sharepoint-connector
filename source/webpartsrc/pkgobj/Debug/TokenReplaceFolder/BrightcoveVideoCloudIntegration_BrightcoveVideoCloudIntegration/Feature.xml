@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="adbf5869-983e-4992-829b-fc810490480a" Scope="Site" Title="Brightcove Video Cloud Integration">
-  <ElementManifests>
-    <ElementManifest Location="BrightcoveVideoCloudPlayer\Elements.xml" />
-    <ElementFile Location="BrightcoveVideoCloudPlayer\BrightcoveVideoCloudPlayer.webpart" />
-  </ElementManifests>
-</Feature>
