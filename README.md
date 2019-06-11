@@ -1,6 +1,6 @@
 # Obsolete
 
-This connector is obsolete and has been replaced by https://github.com/BrightcoveOS/SharePoint-2.x-Connector
+This connector is obsolete and has been replaced by https://github.com/BrightcoveOS/SharePoint-Connector
 
 
 ---
