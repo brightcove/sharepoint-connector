@@ -1,3 +1,10 @@
+# Obsolete
+
+This connector is obsolete and has been replaced by https://github.com/BrightcoveOS/SharePoint-Connector
+
+
+---
+
 # SharePoint 2013 Connector
 
 For full documentation, see the included training PDF.
